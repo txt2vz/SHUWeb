@@ -1,2 +1,22 @@
-/.gradle/
-/bin/
+# Use glob syntax.
+syntax: glob
+
+################################################################################
+# Directories
+################################################################################
+
+# Build artifacts
+**/bin/**
+**/build/**
+out/**
+test-output/**
+output/**
+
+# Gradle
+**/.gradle/**
+gradle-app.setting
+
+## Eclipse
+.settings/**
+.classpath
+.project
