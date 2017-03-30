@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8">
+<title>GAE ISBN Service</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<title>SHU Web App</title>
+	<h1>SHU Test Gretty</h1>
+	<hr />
+	<p>
+		Enter Name:<input type="text" id="shuname"></input>
+		<button onclick="getName(shuname.value)">Lookup SHU Name</button>
+	<p>
+		Returned from Groovy: <br /> <span id="GroovyScriptResponse"></span>
+	</p>
+</body>
+<script>
+	function getName(shuname) {
+		$.ajax({
+			url : "groovyNameScript.groovy",
+			data : "shuname=" + shuname,
+			success : function(data) {
+				alert("data returned: " + data);
+				$('#GroovyScriptResponse').html(data);
+			}
+		});
+	}
+</script>
+</html>

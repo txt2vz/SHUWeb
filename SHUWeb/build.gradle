@@ -1,0 +1,17 @@
+apply plugin: 'groovy'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+	compile 'org.codehaus.groovy:groovy-all:2.4.10'
+	testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+}
+
+gretty {
+	contextPath="/"
+	//httpPort = 8081
+}
